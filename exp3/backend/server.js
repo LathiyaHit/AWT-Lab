@@ -4,7 +4,6 @@ const mysql = require("mysql2");
 
 const app = express();
 
-/* ✅ FORCE CORS ALLOW ALL (temporary for experiment) */
 app.use(cors({ origin: "*" }));
 
 app.use(express.json());

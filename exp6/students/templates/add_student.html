@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="form-card">
+<h2>➕ Add Student</h2>
+
+<form method="POST">
+    {% csrf_token %}
+    
+    <input name="name" placeholder="Full Name" required>
+    <input name="age" type="number" placeholder="Age" required>
+    <input name="course" placeholder="Course" required>
+    <input name="email" type="email" placeholder="Email" required>
+    
+    <button type="submit">Save</button>
+</form>
+
+</div>
+
+{% endblock %}

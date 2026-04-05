@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>📊 Dashboard</h2>
+
+<div class="card-grid">
+
+    <div class="card small">
+        <h3>Total Students</h3>
+        <p>{{ total }}</p>
+    </div>
+
+    <div class="card">
+        <h3>📚 Courses</h3>
+        {% for c in courses %}
+            <div class="course-item">
+                <span>{{ c.course }}</span>
+                <span>{{ c.count }}</span>
+            </div>
+        {% endfor %}
+    </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Students</h2>
+
+<form method="GET">
+    <input type="text" name="q" placeholder="Search by name">
+    <button type="submit">Search</button>
+</form>
+
+<table>
+<tr>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Course</th>
+    <th>Email</th>
+    <th>Actions</th>
+</tr>
+
+{% for s in students %}
+<tr>
+    <td>{{ s.name }}</td>
+    <td>{{ s.age }}</td>
+    <td>{{ s.course }}</td>
+    <td>{{ s.email }}</td>
+    <td>
+        <a href="/update/{{ s.id }}">Edit</a>
+        <a href="/delete/{{ s.id }}">Delete</a>
+    </td>
+</tr>
+{% endfor %}
+
+</table>
+
+{% endblock %}
